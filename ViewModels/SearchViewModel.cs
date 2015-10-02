@@ -67,7 +67,8 @@ namespace BasicBeerForms.ViewModels
 
             try
             {
-                var client = new BreweryDB.BreweryDBClient("");
+                //TODO fill in your BreweryDB API Key here
+                var client = new BreweryDB.BreweryDBClient("YOURE_KEY_GOES_HERE");
                 var results = await client.SearchForBeer(searchTerm);
 
                 Beers.Clear();
