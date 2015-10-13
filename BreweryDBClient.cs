@@ -18,6 +18,9 @@ namespace BreweryDB
 
         public Models.Beer QueryBeerById(string id)
         {
+            if (string.IsNullOrEmpty(_key))
+                throw new Exception("Please provide a API Key for BreweryDB");
+
             if (_client == null)
                 _client = new HttpClient();
 
@@ -36,7 +39,11 @@ namespace BreweryDB
         }
 
         public async Task<List<Models.Beer>> SearchForBeer(string name)
-        {           
+        {
+
+            if (string.IsNullOrEmpty(_key) || _key.Contains("API_KEY"))
+                throw new Exception("Please provide a API Key for BreweryDB");
+
             if (_client == null)
                 _client = new HttpClient();
 

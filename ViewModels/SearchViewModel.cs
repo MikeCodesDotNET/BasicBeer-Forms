@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using BreweryDB.Models;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using Connectivity.Plugin;
 
 namespace BasicBeerForms.ViewModels
 {
@@ -60,10 +61,20 @@ namespace BasicBeerForms.ViewModels
 
         private async Task ExecuteSearchBeersCommand()
         {
+
+            var isConnected = await CrossConnectivity.Current.IsReachable("google.com");
+
+            if(!isConnected)
+            {
+                Acr.UserDialogs.UserDialogs.Instance.ShowError("No connection found. Please check your internetz");
+                return;
+            }
+
             if (IsBusy)
                 return;
 
             IsBusy = true;
+            Acr.UserDialogs.UserDialogs.Instance.ShowLoading("Fetching beers!");
 
             try
             {
@@ -89,6 +100,7 @@ namespace BasicBeerForms.ViewModels
             finally
             {
                 IsBusy = false;
+                Acr.UserDialogs.UserDialogs.Instance.HideLoading();
             }
         }
 
