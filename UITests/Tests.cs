@@ -7,8 +7,13 @@ using Xamarin.UITest.Queries;
 
 namespace BasicBeerForms.UITests
 {
-	[TestFixture(Platform.Android)]
+	#if DEBUG
 	[TestFixture(Platform.iOS)]
+	#endif
+
+	#if !DEBUG
+	[TestFixture(Platform.Android)]
+	#endif
 	public class Tests
 	{
 		IApp app;
@@ -31,4 +36,4 @@ namespace BasicBeerForms.UITests
 			app.Screenshot("First screen.");
 		}
 	}
-}
+} 
