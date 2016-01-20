@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using BreweryDB.Models;
+using BasicBeerForms.CustomRenderers;
 
 namespace BasicBeerForms.Views
 {
@@ -9,13 +10,31 @@ namespace BasicBeerForms.Views
     {
         public Beer SelectedBeer { get; set;}
 
-        public DescriptionPage()
+        public DescriptionPage(Beer selectedBeer)
         {
+            //Set our selected beer
+            SelectedBeer = selectedBeer;
+
+            var photo = new ImageCircle
+            {
+                WidthRequest = this.Width,
+                HeightRequest = 200,
+                Aspect = Aspect.AspectFill,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            photo.Source = ImageSource.FromUri(new Uri(SelectedBeer.Labels.Large));
+
             Content = new StackLayout
             { 
                 Children =
                 {
-                    new Label { Text = "Hello ContentPage" }
+                    photo,
+                    new Label
+                    {
+                        Text = selectedBeer.Description,
+                        XAlign = TextAlignment.Center
+                    }
                 }
             };
         }

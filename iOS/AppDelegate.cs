@@ -16,6 +16,10 @@ namespace BasicBeerForms.iOS
 
             LoadApplication(new App());
 
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes{ Font = UIFont.FromName("Avenir-Medium", 17f), TextColor = UIColor.White });
+            UIBarButtonItem.Appearance.SetTitleTextAttributes(new UITextAttributes{ Font = UIFont.FromName("Avenir-Medium", 17f), TextColor = UIColor.White }, UIControlState.Normal);
+
+
             return base.FinishedLaunching(app, options);
         }
     }

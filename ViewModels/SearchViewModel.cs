@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using BreweryDB.Models;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using BreweryDB.Interfaces;
 
 namespace BasicBeerForms.ViewModels
 {
@@ -12,16 +13,17 @@ namespace BasicBeerForms.ViewModels
         {
         }
 
-        ObservableCollection<Beer> beers = new ObservableCollection<Beer>();
-
-        public ObservableCollection<Beer> Beers
+        ObservableCollection<IBeer> beers = new ObservableCollection<IBeer>();
+        public ObservableCollection<IBeer> Beers
         {
             get { return beers; }
             set { beers = value; OnPropertyChanged("Beers"); }
         }
 
-        private Beer selectedBeer;
+        public Color BackgroundColor = Color.FromHex("F7F7F7");
+        public Color ColorBlue = Color.FromHex("15A9FE");
 
+        private Beer selectedBeer;
         public Beer SelectedBeer
         {
             get { return selectedBeer; }
@@ -33,7 +35,7 @@ namespace BasicBeerForms.ViewModels
                 if(selectedBeer != null)
                 {
                     var navigation = App.Current.MainPage as NavigationPage;
-                    navigation.PushAsync(new Views.DescriptionPage());
+                    navigation.PushAsync(new Views.DescriptionPage(selectedBeer));
                 }
             }
         }
@@ -68,16 +70,16 @@ namespace BasicBeerForms.ViewModels
             try
             {
                 //TODO fill in your BreweryDB API Key here
-                var client = new BreweryDB.BreweryDBClient("YOURE_KEY_GOES_HERE");
-                var results = await client.SearchForBeer(searchTerm);
+                var client = new BreweryDB.BreweryDbClient("b7da1c5827026053a276f0dbe2234962");
+                var results = await client.Beers.Search(searchTerm);
 
                 Beers.Clear();
 
-                if (results.Count > 0)
+                if (results.Data.Count > 0)
                 {
-                    foreach (var beer in results)
+                    foreach (var beer in results.Data)
                     {
-                        Beers.Add(beer);                  
+                        Beers.Add(beer);            
                     }  
                     return;
                 }
