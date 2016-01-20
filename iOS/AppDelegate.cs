@@ -1,27 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
 
 namespace BasicBeerForms.iOS
 {
-    [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-    {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        {
-            global::Xamarin.Forms.Forms.Init();
+	[Register("AppDelegate")]
+	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+	{
+		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+		{
+			#if DEBUG
+			Xamarin.Calabash.Start();
+			#endif
 
-            LoadApplication(new App());
+			global::Xamarin.Forms.Forms.Init();
 
-            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes{ Font = UIFont.FromName("Avenir-Medium", 17f), TextColor = UIColor.White });
-            UIBarButtonItem.Appearance.SetTitleTextAttributes(new UITextAttributes{ Font = UIFont.FromName("Avenir-Medium", 17f), TextColor = UIColor.White }, UIControlState.Normal);
+			LoadApplication(new App ());
+
+			UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes {
+				Font = UIFont.FromName("Avenir-Medium", 17f),
+				TextColor = UIColor.White
+			});
+			UIBarButtonItem.Appearance.SetTitleTextAttributes(new UITextAttributes {
+				Font = UIFont.FromName("Avenir-Medium", 17f),
+				TextColor = UIColor.White
+			}, UIControlState.Normal);
 
 
-            return base.FinishedLaunching(app, options);
-        }
-    }
+			return base.FinishedLaunching(app, options);
+		}
+	}
 }
-
