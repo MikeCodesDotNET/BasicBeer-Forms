@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BEEF129B-5D77-48FE-A283-B7986727B4F2}</ProjectGuid>
+    <ProjectGuid>{A669D678-AA1D-4E45-85AB-A635751A52DD}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BasicBeerForms.UITests</RootNamespace>
-    <AssemblyName>BasicBeerForms.UITests</AssemblyName>
+    <RootNamespace>BasicBeerForms.Droid.UITests</RootNamespace>
+    <AssemblyName>BasicBeerForms.Droid.UITests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,28 +30,21 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.UITest">
-      <HintPath>..\packages\Xamarin.UITest.1.2.0\lib\Xamarin.UITest.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.UITest.1.2.0\lib\Xamarin.UITest.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />
-    <Compile Include="AppInitializer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\iOS\BasicBeerForms.iOS.csproj">
-      <Project>{60E947B7-68BD-4A9D-8D51-A6EE351B3B75}</Project>
-      <Name>BasicBeerForms.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Droid\BasicBeerForms.Droid.csproj">
+    <ProjectReference Include="..\..\Droid\BasicBeerForms.Droid.csproj">
       <Project>{95CFC0B3-F970-4728-93A8-0BD1DBDF5224}</Project>
       <Name>BasicBeerForms.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>

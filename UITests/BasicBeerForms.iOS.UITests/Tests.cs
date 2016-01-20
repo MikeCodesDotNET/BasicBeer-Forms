@@ -3,31 +3,22 @@ using System.IO;
 using System.Linq;
 using NUnit.Framework;
 using Xamarin.UITest;
+using Xamarin.UITest.iOS;
 using Xamarin.UITest.Queries;
 
-namespace BasicBeerForms.UITests
+namespace BasicBeerForms.iOS.UITests
 {
-	#if DEBUG
-	[TestFixture(Platform.iOS)]
-	#endif
-
-	#if !DEBUG
-	[TestFixture(Platform.Android)]
-	#endif
+	[TestFixture]
 	public class Tests
 	{
-		IApp app;
-		Platform platform;
-
-		public Tests (Platform platform)
-		{
-			this.platform = platform;
-		}
+		iOSApp app;
 
 		[SetUp]
 		public void BeforeEachTest ()
 		{
-			app = AppInitializer.StartApp(platform);
+			app = ConfigureApp
+				.iOS
+				.StartApp();
 		}
 
 		[Test]
@@ -36,4 +27,4 @@ namespace BasicBeerForms.UITests
 			app.Screenshot("First screen.");
 		}
 	}
-} 
+}
