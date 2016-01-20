@@ -118,7 +118,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BasicBeerForms.csproj">
+    <ProjectReference Include="..\Core\BasicBeerForms.csproj">
       <Project>{E1018561-2898-4A53-97BC-ADC9DE378303}</Project>
       <Name>BasicBeerForms</Name>
     </ProjectReference>

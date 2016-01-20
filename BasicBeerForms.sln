@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms", "BasicBeerForms.csproj", "{E1018561-2898-4A53-97BC-ADC9DE378303}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms", "Core\BasicBeerForms.csproj", "{E1018561-2898-4A53-97BC-ADC9DE378303}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms.iOS", "iOS\BasicBeerForms.iOS.csproj", "{60E947B7-68BD-4A9D-8D51-A6EE351B3B75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms.Droid", "Droid\BasicBeerForms.Droid.csproj", "{95CFC0B3-F970-4728-93A8-0BD1DBDF5224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms.Droid.UITests", "UITests\BasicBeerForms.Droid.UITests\BasicBeerForms.Droid.UITests.csproj", "{A669D678-AA1D-4E45-85AB-A635751A52DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms.Droid.UITests", "UITests\Droid\BasicBeerForms.Droid.UITests.csproj", "{A669D678-AA1D-4E45-85AB-A635751A52DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms.iOS.UITests", "UITests\BasicBeerForms.iOS.UITests\BasicBeerForms.iOS.UITests.csproj", "{3372D034-DC39-47F8-8272-6687027DEAB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicBeerForms.iOS.UITests", "UITests\iOS\BasicBeerForms.iOS.UITests.csproj", "{3372D034-DC39-47F8-8272-6687027DEAB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
