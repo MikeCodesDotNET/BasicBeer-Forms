@@ -7,93 +7,87 @@ using BreweryDB.Interfaces;
 
 namespace BasicBeerForms.ViewModels
 {
-    public class SearchViewModel : BaseViewModel
-    {
-        public SearchViewModel()
-        {
-        }
+	public class SearchViewModel : BaseViewModel
+	{
+		public SearchViewModel ()
+		{
+		}
 
-        ObservableCollection<IBeer> beers = new ObservableCollection<IBeer>();
-        public ObservableCollection<IBeer> Beers
-        {
-            get { return beers; }
-            set { beers = value; OnPropertyChanged("Beers"); }
-        }
+		ObservableCollection<IBeer> beers = new ObservableCollection<IBeer> ();
 
-        public Color BackgroundColor = Color.FromHex("F7F7F7");
-        public Color ColorBlue = Color.FromHex("15A9FE");
+		public ObservableCollection<IBeer> Beers {
+			get { return beers; }
+			set {
+				beers = value;
+				OnPropertyChanged("Beers");
+			}
+		}
 
-        private Beer selectedBeer;
-        public Beer SelectedBeer
-        {
-            get { return selectedBeer; }
-            set
-            {
-                selectedBeer = value;
-                OnPropertyChanged("SelectedBeer");
+		public Color BackgroundColor = Color.FromHex("F7F7F7");
+		public Color ColorBlue = Color.FromHex("15A9FE");
 
-                if(selectedBeer != null)
-                {
-                    var navigation = App.Current.MainPage as NavigationPage;
-                    navigation.PushAsync(new Views.DescriptionPage(selectedBeer));
-                }
-            }
-        }
+		private Beer selectedBeer;
 
-        string searchTerm = string.Empty;
-        public string SearchTerm
-        {
-            get
-            {
-                return searchTerm;
-            }
-            set
-            {
-                searchTerm = value;
-                OnPropertyChanged("SearchTerm");
-            }
-        }
+		public Beer SelectedBeer {
+			get { return selectedBeer; }
+			set {
+				selectedBeer = value;
+				OnPropertyChanged("SelectedBeer");
 
-        private Command searchBeersCommand;
-        public Command SearchBeersCommand
-        {
-            get { return searchBeersCommand ?? (searchBeersCommand = new Command(async () => await ExecuteSearchBeersCommand())); }
-        }
+				if (selectedBeer != null) {
+					Xamarin.Insights.Track("Selected Beer", searchTerm, selectedBeer.Name);
+					var navigation = App.Current.MainPage as NavigationPage;
+					navigation.PushAsync(new Views.DescriptionPage (selectedBeer));
+				}
+			}
+		}
 
-        private async Task ExecuteSearchBeersCommand()
-        {
-            if (IsBusy)
-                return;
+		string searchTerm = string.Empty;
 
-            IsBusy = true;
+		public string SearchTerm {
+			get {
+				return searchTerm;
+			}
+			set {
+				searchTerm = value;
+				OnPropertyChanged("SearchTerm");
+			}
+		}
 
-            try
-            {
-                //TODO fill in your BreweryDB API Key here
-                var client = new BreweryDB.BreweryDbClient("b7da1c5827026053a276f0dbe2234962");
-                var results = await client.Beers.Search(searchTerm);
+		private Command searchBeersCommand;
 
-                Beers.Clear();
+		public Command SearchBeersCommand {
+			get { return searchBeersCommand ?? (searchBeersCommand = new Command (async () => await ExecuteSearchBeersCommand())); }
+		}
 
-                if (results.Data.Count > 0)
-                {
-                    foreach (var beer in results.Data)
-                    {
-                        Beers.Add(beer);            
-                    }  
-                    return;
-                }
-            }
-            catch(Exception ex)
-            {
-                Acr.UserDialogs.UserDialogs.Instance.ShowError(ex.Message);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
+		private async Task ExecuteSearchBeersCommand ()
+		{
+			if (IsBusy)
+				return;
 
-    }
+			using (Xamarin.Insights.TrackTime("BeerSearch", "searchTerm", searchTerm)) {
+
+				IsBusy = true;
+
+				try {
+					//TODO fill in your BreweryDB API Key here
+					var client = new BreweryDB.BreweryDbClient ("b7da1c5827026053a276f0dbe2234962");
+					var results = await client.Beers.Search(searchTerm);
+
+					Beers.Clear();
+
+					if (results.Data.Count > 0) {
+						foreach (var beer in results.Data) {
+							Beers.Add(beer);            
+						}  
+						return;
+					}
+				} catch (Exception ex) {
+					Acr.UserDialogs.UserDialogs.Instance.ShowError(ex.Message);
+				} finally {
+					IsBusy = false;
+				}
+			}
+		}
+	}
 }
-
