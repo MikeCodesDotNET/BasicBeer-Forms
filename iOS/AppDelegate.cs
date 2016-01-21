@@ -8,14 +8,23 @@ namespace BasicBeerForms.iOS
 	{
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			#if DEBUG
-			Xamarin.Calabash.Start();
-			#endif
 
 			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App ());
 
+			initGlobalAppearance();
+					
+			#if DEBUG
+			Xamarin.Calabash.Start();
+			#endif
+
+			return base.FinishedLaunching(app, options);
+		}
+
+
+		static void initGlobalAppearance ()
+		{
 			UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes {
 				Font = UIFont.FromName("Avenir-Medium", 17f),
 				TextColor = UIColor.White
@@ -24,9 +33,6 @@ namespace BasicBeerForms.iOS
 				Font = UIFont.FromName("Avenir-Medium", 17f),
 				TextColor = UIColor.White
 			}, UIControlState.Normal);
-
-
-			return base.FinishedLaunching(app, options);
 		}
 	}
 }

@@ -25,6 +25,7 @@ Global
 		{3372D034-DC39-47F8-8272-6687027DEAB7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{3372D034-DC39-47F8-8272-6687027DEAB7}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{3372D034-DC39-47F8-8272-6687027DEAB7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3372D034-DC39-47F8-8272-6687027DEAB7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{3372D034-DC39-47F8-8272-6687027DEAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3372D034-DC39-47F8-8272-6687027DEAB7}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{3372D034-DC39-47F8-8272-6687027DEAB7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
