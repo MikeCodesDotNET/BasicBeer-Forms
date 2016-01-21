@@ -22,9 +22,43 @@ namespace BasicBeerForms.Droid.UITests
 		}
 
 		[Test]
-		public void AppLaunches ()
+		public void NavigateThroughApp ()
 		{
-			app.Screenshot("First screen.");
+			// app.Repl();
+
+			app.Screenshot("App launched");
+
+			app.Tap(x => x.Id("search_src_text"));
+
+			app.Screenshot("Tap on Search Bar");
+
+			app.EnterText(x => x.Id("search_src_text"), "Duvel");
+
+			app.Screenshot("Entered 'Duvel' into Search Bar");
+
+			app.PressEnter();
+
+			app.WaitForElement(x => x.Class("TextCellRenderer_TextCellView").Index(3), "Timed out waiting for at lease 3 results");
+
+			app.Screenshot("Search results for 'Duvel'");
+
+			app.Tap(x => x.Class("TextCellRenderer_TextCellView").Index(1));
+
+			app.Screenshot("Tapped on second result");
+
+			app.ClearText(x => x.Id("search_src_text"));
+
+			app.Screenshot("Cleared Search Bar");
+
+			app.EnterText(x => x.Id("search_src_text"), "Duvel");
+
+			app.Screenshot("Entered 'Duvel' into Search Bar");
+
+			app.PressEnter();
+
+			app.WaitForElement(x => x.Class("TextCellRenderer_TextCellView").Index(3), "Timed out waiting for at lease 3 results");
+
+			app.Screenshot("Search results for 'Duvel'");
 		}
 	}
 }

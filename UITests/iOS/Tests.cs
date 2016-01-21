@@ -44,7 +44,7 @@ namespace BasicBeerForms.iOS.UITests
 
 			app.Tap(x => x.Class("UITableViewCellContentView").Index(1));
 
-			app.Screenshot("Tapped on first result");
+			app.Screenshot("Tapped on second result");
 
 			app.ClearText(x => x.Marked("Search for beers!"));
 
