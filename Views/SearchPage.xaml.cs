@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 
 namespace BasicBeerForms.Views
 {
-    [XamlCompilation (XamlCompilationOptions.Compile)]
+	[XamlCompilation (XamlCompilationOptions.Compile)]
     public partial class SearchPage : ContentPage
     {
         public SearchPage()
@@ -14,7 +14,7 @@ namespace BasicBeerForms.Views
             BindingContext = new ViewModels.SearchViewModel();
 
             InitializeComponent();
-        }
-    }
+        }	
+	}
 }
 

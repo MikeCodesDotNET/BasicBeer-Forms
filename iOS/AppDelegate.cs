@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using FormsToolkit.iOS;
 
 namespace BasicBeerForms.iOS
 {
@@ -13,6 +14,7 @@ namespace BasicBeerForms.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Toolkit.Init();
 
             LoadApplication(new App());
 

@@ -2,23 +2,15 @@
 <ContentPage 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="BasicBeerForms.Views.SearchPage" 
-	Title="Search for a beer">
+	x:Class="BasicBeerForms.Views.MyBeersPage"
+	Title="My Beers">
 	<ContentPage.Content>
-	<StackLayout>
-		<SearchBar 
-			Placeholder="Search for beers!" 
-			SearchCommand="{Binding SearchBeersCommand}" 
-			Text="{Binding SearchTerm}" 
-			BackgroundColor="#15A9FE" 
-			CancelButtonColor="White">
-		</SearchBar>
 		<ListView 
 			BackgroundColor="#F7F7F7" 
 			RowHeight="80" 
 			CachingStrategy="RecycleElement" 
 			ItemsSource="{Binding Beers}" 
-			SelectedItem="{Binding SelectedBeer, Mode=TwoWay}">
+			SelectedItem="{Binding SelectedBeer}">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ImageCell 
@@ -29,6 +21,5 @@
 				</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
-	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

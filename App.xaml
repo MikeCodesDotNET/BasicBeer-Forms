@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="BasicBeerForms.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#15A9FE</Color>
+            <Color x:Key="PrimaryDark">#41335D</Color>
+            <Color x:Key="PrimaryDarkTranslucent">#9926213C</Color>
+            <Color x:Key="Accent">#FFC107</Color>
+            <Color x:Key="NavigationText">White</Color>
+            <Color x:Key="WindowBackground">#F5F5F5</Color>
+            <Color x:Key="LabelSectionText">#48484C</Color>
+
+
+            <Thickness x:Key="SmallPadding">4</Thickness>
+            <Thickness x:Key="MediumPadding">8</Thickness>
+            <Thickness x:Key="StandardPadding">16</Thickness>
+
+            <x:Double x:Key="SmallSpacing">4</x:Double>
+            <x:Double x:Key="MediumSpacing">8</x:Double>
+            <x:Double x:Key="StandardSpacing">16</x:Double>
+
+            <OnPlatform x:TypeArguments="Color" Android="#ECECEC" iOS="#ECECEC" x:Key="Divider"/>
+            <OnPlatform x:TypeArguments="Thickness" Android="8,16" iOS="0,0,0,16" x:Key="CardPadding"/>
+            <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="0" x:Key="CardSpacing"/>
+
+            <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" x:Key="EvolveListItemTextStyleSize" />
+            <OnPlatform x:TypeArguments="x:Double" Android="13" iOS="13" x:Key="EvolveListItemDetailTextStyleSize" />
+
+            <Style x:Key="EvolveListItemTextStyle" TargetType="Label" BaseResourceKey="ListItemTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource EvolveListItemTextStyleSize}" />
+            </Style>
+            <Style x:Key="EvolveListItemDetailTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyle">
+                <Setter Property="FontSize" Value="{DynamicResource EvolveListItemDetailTextStyleSize}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
