@@ -23,6 +23,8 @@ namespace BasicBeerForms.ViewModels
         public Color BackgroundColor = Color.FromHex("F7F7F7");
         public Color ColorBlue = Color.FromHex("15A9FE");
 
+        public Beer NewBeer { get; set;}
+
         private Beer selectedBeer;
         public Beer SelectedBeer
         {
@@ -34,8 +36,9 @@ namespace BasicBeerForms.ViewModels
 
                 if(selectedBeer != null)
                 {
-                    var navigation = App.Current.MainPage as NavigationPage;
-                    navigation.PushAsync(new Views.DescriptionPage(selectedBeer));
+                    var tabbedPage = Application.Current.MainPage as Views.RootPage;
+                    var navigation = tabbedPage.Children[2].Navigation;
+                    navigation.PushAsync(new Views.BeerDescription(selectedBeer), true);
                 }
             }
         }

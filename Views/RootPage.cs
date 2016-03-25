@@ -1,12 +1,11 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using BasicBeerForms.Controls;
 
-namespace BasicBeerForms.Views.iOS
+namespace BasicBeerForms.Views
 {
-    public class RootPageiOS : TabbedPage
+    public class RootPage : TabbedPage
     {
-        public RootPageiOS()
+        public RootPage()
         {
             Children.Add(new BeerDrinkinNavigationPage(new MyBeersPage {Title = "My Beers", Icon = "tabbar_mybeers.png"}));
             Children.Add(new BeerDrinkinNavigationPage(new WishListPage {Title = "Wish List", Icon = "tabbar_wishlist.png"}));

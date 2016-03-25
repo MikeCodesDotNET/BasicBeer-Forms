@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
-using BasicBeerForms.Views;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace BasicBeerForms
 {
-    public partial class App : Xamarin.Forms.Application
+    public partial class App : Application
     {
         public App()
         {
-           InitializeComponent();
+            InitializeComponent();
 
             switch (Device.OS)
             {
                 case TargetPlatform.Android:
-                    MainPage = new Views.Android.RootPageAndroid();
+                    MainPage = new Views.RootPage();
                     break;
                 case TargetPlatform.iOS:
-                    MainPage = new Views.iOS.RootPageiOS();
+                    MainPage = new Views.RootPage();
                     break;
                 default:
                     throw new NotImplementedException();

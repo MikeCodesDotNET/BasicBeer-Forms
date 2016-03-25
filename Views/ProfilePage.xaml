@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BasicBeerForms.Views.ProfilePage">
 	<ContentPage.Content>
+		<StackLayout>
+			<Image Source="https://www.syntaxismyui.com/wp-content/uploads/2015/03/InAnger-Strip-7.png"></Image>
+			<Label Text="Mike James"></Label>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
