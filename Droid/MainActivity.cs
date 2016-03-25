@@ -9,24 +9,23 @@ using Android.Widget;
 using Android.OS;
 using FormsToolkit.Droid;
 using Android.Graphics.Drawables;
+using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms;
 
 namespace BasicBeerForms.Droid
 {
     [Activity(Label = "BasicBeerForms.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
+            FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
+            FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
+
             base.OnCreate(bundle);
-
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            Toolkit.Init();
+            Forms.Init(this, bundle);
             LoadApplication(new App());
-
-            if ((int)Android.OS.Build.VERSION.SdkInt >= 21) {
-                ActionBar.SetIcon (
-                    new ColorDrawable (Resources.GetColor (Android.Resource.Color.Transparent)));
-            }        }
+        }
     }
 }
 
