@@ -5,7 +5,7 @@
   <Properties>
     <DisplayName>BasicBeerForms.UWP</DisplayName>
     <PublisherDisplayName>micha</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Assets/StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
@@ -16,6 +16,7 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BasicBeerForms.UWP.App">
       <uap:VisualElements DisplayName="Beer Drinkin" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="BasicBeerForms.UWP" BackgroundColor="transparent">
+        <uap:LockScreen Notification="badge" BadgeLogo="Assets\logo.png" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Beer Drinkin">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#15A9FE" />

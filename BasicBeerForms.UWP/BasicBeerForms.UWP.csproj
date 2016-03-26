@@ -110,18 +110,33 @@
     <None Include="BasicBeerForms.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\logo.scale-100.png" />
+    <Content Include="Assets\logo.scale-125.png" />
+    <Content Include="Assets\logo.scale-150.png" />
+    <Content Include="Assets\logo.scale-200.png" />
+    <Content Include="Assets\logo.scale-400.png" />
     <Content Include="Assets\logo1240.png" />
     <Content Include="Assets\logo150.png" />
     <Content Include="Assets\logo188.png" />
     <Content Include="Assets\logo225.png" />
+    <Content Include="Assets\logo24.png" />
     <Content Include="Assets\logo2480.png" />
     <Content Include="Assets\logo255.png" />
+    <Content Include="Assets\logo30.png" />
     <Content Include="Assets\logo300.png" />
+    <Content Include="Assets\logo36.png" />
+    <Content Include="Assets\logo48.png" />
     <Content Include="Assets\logo600.png" />
     <Content Include="Assets\logo620.png" />
     <Content Include="Assets\logo630.png" />
     <Content Include="Assets\logo775.png" />
     <Content Include="Assets\logo930.png" />
+    <Content Include="Assets\logo96.png" />
+    <Content Include="Assets\logo96.scale-100.png" />
+    <Content Include="Assets\logo96.scale-125.png" />
+    <Content Include="Assets\logo96.scale-150.png" />
+    <Content Include="Assets\logo96.scale-200.png" />
+    <Content Include="Assets\logo96.scale-400.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
@@ -130,13 +145,18 @@
     <Content Include="Assets\Square150x150Logo.scale-125.png" />
     <Content Include="Assets\Square150x150Logo.scale-150.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
