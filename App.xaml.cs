@@ -11,18 +11,7 @@ namespace BasicBeerForms
         public App()
         {
             InitializeComponent();
-
-            switch (Device.OS)
-            {
-                case TargetPlatform.Android:
-                    MainPage = new Views.RootPage();
-                    break;
-                case TargetPlatform.iOS:
-                    MainPage = new Views.RootPage();
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
+            MainPage = new Views.RootPage();
         }
 
         protected override void OnStart()
