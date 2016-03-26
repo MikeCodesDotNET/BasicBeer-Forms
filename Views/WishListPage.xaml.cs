@@ -10,6 +10,11 @@ namespace BasicBeerForms.Views
         public WishListPage()
         {
             InitializeComponent();
+
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                Icon = new FileImageSource { File = "tabbar_wishlist.png" };
+            }
         }
     }
 }

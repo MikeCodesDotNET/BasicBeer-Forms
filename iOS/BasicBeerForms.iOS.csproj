@@ -196,5 +196,6 @@
     <BundleResource Include="Resources\tabbar_wishlist%402x.png" />
     <BundleResource Include="Resources\tabbar_wishlist%403x.png" />
     <BundleResource Include="Resources\share.png" />
+    <BundleResource Include="Resources\logo.png" />
   </ItemGroup>
 </Project>

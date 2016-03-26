@@ -14,16 +14,18 @@ using Xamarin.Forms;
 
 namespace BasicBeerForms.Droid
 {
-    [Activity(Label = "BasicBeerForms.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Beer Drinkin Lite", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
-            FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
-            FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
-
+            ToolbarResource = Resource.Layout.toolbar;
+            TabLayoutResource = Resource.Layout.tabs;
             base.OnCreate(bundle);
+
             Forms.Init(this, bundle);
+            Xamarin.Insights.Initialize(Xamarin.Insights.DebugModeKey, this);
+
             LoadApplication(new App());
         }
     }

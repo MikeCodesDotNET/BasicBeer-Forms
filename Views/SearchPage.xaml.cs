@@ -11,9 +11,15 @@ namespace BasicBeerForms.Views
     {
         public SearchPage()
         {
+            InitializeComponent();
+
             BindingContext = new ViewModels.SearchViewModel();
 
-            InitializeComponent();
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                Icon = new FileImageSource { File = "tabbar_search.png" };
+            }
+
         }	
 	}
 }

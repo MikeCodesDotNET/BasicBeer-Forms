@@ -7,10 +7,10 @@ namespace BasicBeerForms.Views
     {
         public RootPage()
         {
-            Children.Add(new BeerDrinkinNavigationPage(new MyBeersPage {Title = "My Beers", Icon = "tabbar_mybeers.png"}));
-            Children.Add(new BeerDrinkinNavigationPage(new WishListPage {Title = "Wish List", Icon = "tabbar_wishlist.png"}));
-            Children.Add(new BeerDrinkinNavigationPage(new SearchPage() {Title = "Search", Icon = "tabbar_search.png"}));
-            Children.Add(new BeerDrinkinNavigationPage(new ProfilePage() {Title = "Me", Icon = "tabbar_profile.png"}));
+            Children.Add(new BeerDrinkinNavigationPage(new MyBeersPage {Title = "My Beers"}));
+            Children.Add(new BeerDrinkinNavigationPage(new WishListPage {Title = "Wish List"}));
+            Children.Add(new BeerDrinkinNavigationPage(new SearchPage() {Title = "Search"}));
+            Children.Add(new BeerDrinkinNavigationPage(new ProfilePage() {Title = "Me"}));
         }
     }
 }

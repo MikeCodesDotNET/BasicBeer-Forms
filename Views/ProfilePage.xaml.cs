@@ -10,6 +10,11 @@ namespace BasicBeerForms.Views
         public ProfilePage()
         {
             InitializeComponent();
+
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                Icon = new FileImageSource { File = "tabbar_profile.png" };
+            }
         }
     }
 }
