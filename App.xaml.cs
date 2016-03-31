@@ -11,9 +11,11 @@ namespace BasicBeerForms
         public App()
         {
             InitializeComponent();
-            MainPage = new Views.RootPage();
+            if (Device.OS != TargetPlatform.Android)
+                MainPage = new Views.RootPage();
+            else
+                MainPage = new Views.RootAndroid();
         }
-
         protected override void OnStart()
         {
             // Handle when your app starts

@@ -11,6 +11,7 @@ namespace BasicBeerForms.ViewModels
     {
         public SearchViewModel()
         {
+
         }
 
         ObservableCollection<IBeer> beers = new ObservableCollection<IBeer>();
